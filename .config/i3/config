@@ -217,3 +217,7 @@ bindsym --release Shift+Print exec --no-startup-id scrot -s 'screenshot_%Y%m%d_%
 
 # Night light setting for Zervochori
 exec --no-startup-id killall redshift redshift -l 39.41:20.55 -t 6500:4500 -g 0.8 -m randr -v 
+
+# Keyboard layout language option
+exec --no-startup-id "setxkbmap -layout us,el"
+exec --no-startup-id "setxkbmap -option 'grp:lalt_lshift_toggle'"
