@@ -1,0 +1,7 @@
+{
+	"coc.preferences.formatOnSaveFiletypes": "rust",
+	"eslint.enable":true,
+	"eslint.alwaysShowStatus": true,
+	"eslint.autoFixOnSave": true,
+	"eslint.format.enable": true
+}
