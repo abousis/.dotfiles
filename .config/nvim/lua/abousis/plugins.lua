@@ -3,7 +3,7 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 
 Plug 'https://github.com/tpope/vim-commentary' -- Comments
-Plug('folke/tokyonight.nvim') --Styling
+Plug 'folke/tokyonight.nvim' --Styling
 Plug 'nvim-lualine/lualine.nvim' -- Important footer info
 Plug 'https://github.com/preservim/nerdtree' -- File tree
 Plug 'nvim-lua/plenary.nvim' -- Dependency for Telescope
@@ -16,6 +16,7 @@ Plug 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
 Plug 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
 Plug 'hrsh7th/nvim-cmp' -- Completion
 Plug 'L3MON4D3/LuaSnip' -- Dependency for nvim-cmp
+Plug('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' }) -- Language syntax highlighting
 
 
 vim.call('plug#end')
