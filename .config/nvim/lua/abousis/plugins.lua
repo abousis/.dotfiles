@@ -23,6 +23,8 @@ Plug 'nvim-tree/nvim-web-devicons' -- File icons
 Plug 'akinsho/bufferline.nvim' -- Styling tabs
 Plug 'norcalli/nvim-colorizer.lua' -- Color highlighting
 Plug 'glepnir/lspsaga.nvim' -- LSP saga
+Plug 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+Plug 'MunifTanjim/prettier.nvim' -- Prettier formatter
 
 vim.call('plug#end')
 
