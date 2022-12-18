@@ -22,6 +22,7 @@ Plug 'windwp/nvim-ts-autotag' -- HTML autotag
 Plug 'nvim-tree/nvim-web-devicons' -- File icons
 Plug 'akinsho/bufferline.nvim' -- Styling tabs
 Plug 'norcalli/nvim-colorizer.lua' -- Color highlighting
+Plug 'glepnir/lspsaga.nvim' -- LSP saga
 
 vim.call('plug#end')
 
