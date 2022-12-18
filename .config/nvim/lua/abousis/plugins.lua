@@ -17,6 +17,8 @@ Plug 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
 Plug 'hrsh7th/nvim-cmp' -- Completion
 Plug 'L3MON4D3/LuaSnip' -- Dependency for nvim-cmp
 Plug('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' }) -- Language syntax highlighting
+Plug 'windwp/nvim-autopairs' -- Autopairs
+Plug 'windwp/nvim-ts-autotag' -- HTML autotag
 
 
 vim.call('plug#end')
