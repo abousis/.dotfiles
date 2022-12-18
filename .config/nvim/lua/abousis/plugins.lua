@@ -25,6 +25,8 @@ Plug 'norcalli/nvim-colorizer.lua' -- Color highlighting
 Plug 'glepnir/lspsaga.nvim' -- LSP saga
 Plug 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
 Plug 'MunifTanjim/prettier.nvim' -- Prettier formatter
+Plug 'lewis6991/gitsigns.nvim' -- Git linting
+Plug 'tpope/vim-fugitive' -- Git Fugitive
 
 vim.call('plug#end')
 
