@@ -11,6 +11,12 @@ Plug 'nvim-telescope/telescope.nvim' -- Fuzzy search and preview
 Plug 'https://github.com/neovim/nvim-lspconfig' -- LSP config
 Plug 'williamboman/mason.nvim' -- Mason
 Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'onsails/lspkind-nvim' -- VSCode-like pictograms
+Plug 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
+Plug 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
+Plug 'hrsh7th/nvim-cmp' -- Completion
+Plug 'L3MON4D3/LuaSnip' -- Dependency for nvim-cmp
+
 
 vim.call('plug#end')
 
