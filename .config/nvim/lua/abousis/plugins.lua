@@ -19,7 +19,7 @@ Plug 'L3MON4D3/LuaSnip' -- Dependency for nvim-cmp
 Plug('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' }) -- Language syntax highlighting
 Plug 'windwp/nvim-autopairs' -- Autopairs
 Plug 'windwp/nvim-ts-autotag' -- HTML autotag
-
+Plug 'nvim-tree/nvim-web-devicons' -- File icons
 
 vim.call('plug#end')
 
