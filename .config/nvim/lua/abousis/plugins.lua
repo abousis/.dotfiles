@@ -20,6 +20,7 @@ Plug('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' }) -- Language synta
 Plug 'windwp/nvim-autopairs' -- Autopairs
 Plug 'windwp/nvim-ts-autotag' -- HTML autotag
 Plug 'nvim-tree/nvim-web-devicons' -- File icons
+Plug 'akinsho/bufferline.nvim' -- Styling tabs
 
 vim.call('plug#end')
 
