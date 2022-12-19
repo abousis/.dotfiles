@@ -99,7 +99,7 @@ window:
   # Override the variant of the GTK theme/Wayland client side decorations.
   # Commonly supported values are `dark` and `light`. Set this to `None` to use
   # the default theme variant.
-  decorations_theme_variant: dark
+  # decorations_theme_variant: dark
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -184,12 +184,13 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-# Colors (Tomorrow Night)
+# TokyoNight Alacritty Colors
 colors:
   # Default colors
   primary:
-    background: '#3d216f'
-    foreground: '#d5d8f6'
+    background: '0x24283b'
+    foreground: '0xc0caf5'
+
 
     # Bright and dim foreground colors
     #
@@ -197,8 +198,8 @@ colors:
     # present. If the bright foreground color is not set, or
     # `draw_bold_text_with_bright_colors` is `false`, the normal foreground
     # color will be used.
-    dim_foreground: '#62f482'
-    bright_foreground: '#eaeaea'
+    # dim_foreground: '#62f482'
+    # bright_foreground: '#eaeaea'
 
   # Cursor colors
   #
@@ -223,33 +224,33 @@ colors:
   # Search colors
   #
   # Colors used for the search bar and match highlighting.
-  search:
+  # search:
     # Allowed values are CellForeground/CellBackground, which reference the
     # affected cell, or hexadecimal colors like #ff00ff.
-    matches:
-      foreground: '#000000'
-      background: '#ffffff'
-    focused_match:
-      foreground: '#ffffff'
-      background: '#000000'
+    # matches:
+      # foreground: '#000000'
+      # background: '#ffffff'
+    # focused_match:
+      # foreground: '#ffffff'
+      # background: '#000000'
 
   # Keyboard hints
-  hints:
+  # hints:
     # First character in the hint label
     #
     # Allowed values are CellForeground/CellBackground, which reference the
     # affected cell, or hexadecimal colors like #ff00ff.
-    start:
-      foreground: '#1d1f21'
-      background: '#e9ff5e'
+    # start:
+      # foreground: '#1d1f21'
+      # background: '#e9ff5e'
 
     # All characters after the first one in the hint label
     #
     # Allowed values are CellForeground/CellBackground, which reference the
     # affected cell, or hexadecimal colors like #ff00ff.
-    end:
-      foreground: '#e9ff5e'
-      background: '#1d1f21'
+    # end:
+      # foreground: '#e9ff5e'
+      # background: '#1d1f21'
 
   # Line indicator
   #
@@ -257,18 +258,18 @@ colors:
   # search and vi mode.
   #
   # By default, these will use the opposing primary color.
-  line_indicator:
-    foreground: None
-    background: None
+  # line_indicator:
+    # foreground: None
+    # background: None
 
   # Footer bar
   #
   # Color used for the footer bar on the bottom, used by search regex input,
   # hyperlink URI preview, etc.
   #
-  footer_bar:
-    background: '#c5c8c6'
-    foreground: '#1d1f21'
+  # footer_bar:
+    # background: '#c5c8c6'
+    # foreground: '#1d1f21'
 
   # Selection colors
   #
@@ -282,39 +283,39 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#1d1f21'
-    red:     '#cc6666'
-    green:   '#b5bd68'
-    yellow:  '#f0c674'
-    blue:    '#81a2be'
-    magenta: '#b294bb'
-    cyan:    '#8abeb7'
-    white:   '#c5c8c6'
+    black:   '0x1d202f'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xa9b1d6'
 
   # Bright colors
   bright:
-    black:   '#666666'
-    red:     '#d54e53'
-    green:   '#b9ca4a'
-    yellow:  '#e7c547'
-    blue:    '#7aa6da'
-    magenta: '#c397d8'
-    cyan:    '#70c0b1'
-    white:   '#eaeaea'
+    black:   '0x414868'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xc0caf5'  
 
   # Dim colors
   #
   # If the dim colors are not set, they will be calculated automatically based
   # on the `normal` colors.
-  dim:
-    black:   '#131415'
-    red:     '#864343'
-    green:   '#777c44'
-    yellow:  '#9e824c'
-    blue:    '#556a7d'
-    magenta: '#75617b'
-    cyan:    '#5b7d78'
-    white:   '#828482'
+  # dim:
+  #   black:   '#131415'
+  #   red:     '#864343'
+  #   green:   '#777c44'
+  #   yellow:  '#9e824c'
+  #   blue:    '#556a7d'
+  #   magenta: '#75617b'
+  #   cyan:    '#5b7d78'
+  #   white:   '#828482'
 
   # Indexed Colors
   #
@@ -324,7 +325,9 @@ colors:
   # Example:
   #   `- { index: 16, color: '#ff00ff' }`
   #
-  #indexed_colors: []
+  indexed_colors:
+    - { index: 16, color: '0xff9e64' }
+    - { index: 17, color: '0xdb4b4b' } 
 
   # Transparent cell backgrounds
   #
