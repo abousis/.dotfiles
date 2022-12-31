@@ -1,21 +1,29 @@
-local status, null_ls = pcall(require, 'null_ls')
-if (not status) then return end
+local null_ls = require("null-ls")
 
-null_ls.setup {
-	on_attach = function(client, bufnr)
-		if client.server_capabilities.documentFormattingProvider then
-			vim.api.nvim_command [[augroup Format]]
-
-			vim.api.nvim_command [[autocmd! * <buffer>]]
-			vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-			vim.api.nvim_command [[augroup END]]
-		end
-
-	end,
-	sources = {
-		null_ls.builtins.diagnostics.eslint_d.with({
-			diagnostics_format = '[eslint] #{m}\n(#{c})'
-		}),
-		null_ls.builtins.diagnostics.zsh
-	}
+local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
+local event = "BufWritePre" -- or "BufWritePost"
+local async = event == "BufWritePost"
+local my_sources = {
+	null_ls.builtins.formatting.prettier.with({
+		filetypes = {
+			"javascript", "typescript", "css", "scss", "html", "json", "yaml", "markdown", "md", "txt"
+		},
+	})
 }
+
+null_ls.setup({
+	debug = true,
+	on_attach = function(client, bufnr)
+		if client.supports_method("textDocument/formatting") then
+			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				group = augroup,
+				buffer = bufnr,
+				callback = function()
+					vim.lsp.buf.format({ bufnr = bufnr })
+				end,
+			})
+		end
+	end,
+	sources = my_sources
+})

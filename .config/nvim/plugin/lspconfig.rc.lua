@@ -1,4 +1,5 @@
 local status, nvim_lsp = pcall(require, 'lspconfig')
+
 if (not status) then return end
 
 local on_attach = function(client, bufnr)
@@ -6,7 +7,11 @@ local on_attach = function(client, bufnr)
 	if client.server_capabilities.documentFormattingProvider then
 		vim.api.nvim_command [[augroup Format]]
 		vim.api.nvim_command [[autocmd! * <buffer>]]
-		vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+		if client.name == 'tsserver' then
+			vim.api.nvim_command [[autocmd BufWritePre <buffer> Prettier]]
+		else
+			vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ bufnr = bufnr })]]
+		end
 		vim.api.nvim_command [[augroup END]]
 	end
 end
@@ -14,7 +19,6 @@ end
 nvim_lsp.sumneko_lua.setup {
 	on_attach = function(client, bufnr)
 		on_attach(client, bufnr)
-		-- enable_format_on_save(client, bufnr)
 	end,
 	settings = {
 		Lua = {
@@ -32,9 +36,12 @@ nvim_lsp.sumneko_lua.setup {
 	},
 }
 
+require('lspconfig')['intelephense'].setup {
+	on_attach = on_attach,
+}
+
 require('lspconfig')['pyright'].setup {
 	on_attach = on_attach,
-	-- flags = lsp_flags,
 }
 
 require('lspconfig')['tsserver'].setup {
@@ -45,7 +52,6 @@ require('lspconfig')['tsserver'].setup {
 
 require('lspconfig')['rust_analyzer'].setup {
 	on_attach = on_attach,
-	-- flags = lsp_flags,
 	-- Server-specific settings...
 	settings = {
 		["rust-analyzer"] = {}
