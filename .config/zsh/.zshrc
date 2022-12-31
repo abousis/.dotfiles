@@ -106,7 +106,17 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ls="lsd"
+alias rg="~/Dev/Tools/ripgrep/target/release/rg"
+alias cat="~/.cargo/bin/bat"
+alias nv="nvim"
+alias nvf='nvim $(fzf)'
+alias pm="~/Dev/Tools/Postman/app/Postman"
 source ~/Projects/powerlevel10k/powerlevel10k.zsh-theme
+
+#fzf settings
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
