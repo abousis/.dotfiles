@@ -83,6 +83,12 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# Autocomplete git branches
+autoload -Uz compinit && compinit
+
+# Keymaps
+setxkbmap -option caps:escape
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -116,7 +122,6 @@ source ~/Projects/powerlevel10k/powerlevel10k.zsh-theme
 
 #fzf settings
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
