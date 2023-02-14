@@ -8,6 +8,10 @@ set.relativenumber = true
 set.autoindent = true
 
 --Set UTF-8 encoding
-set.encoding='utf-8'
+set.encoding = 'utf-8'
 
-set.wildignore:append {'*/node_modules/*'}
+set.wildignore:append { '*/node_modules/*' }
+
+-- Set tab === 4 spaces
+set.ts = 2
+set.sw = 2
