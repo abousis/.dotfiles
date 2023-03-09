@@ -1,14 +1,17 @@
 local null_ls = require("null-ls")
 
-local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
-local event = "BufWritePre" -- or "BufWritePost"
-local async = event == "BufWritePost"
 local my_sources = {
 	null_ls.builtins.formatting.prettier.with({
 		filetypes = {
 			"javascript", "typescript", "css", "scss", "html", "json", "yaml", "markdown", "md", "txt"
 		},
-	})
+	}),
+	null_ls.builtins.diagnostics.phpcs.with({ -- Change how the php linting will work
+		prefer_local = "vendor/bin",
+	}),
+	null_ls.builtins.formatting.phpcbf.with({ -- Use the local installation first
+		prefer_local = "vendor/bin",
+	}),
 }
 
 null_ls.setup({
@@ -25,5 +28,7 @@ null_ls.setup({
 			})
 		end
 	end,
+	-- root_dir = utils.root_pattern("composer.json", "package.json", "Makefile", ".git"), -- Add composer
+	diagnostics_format = "#{m} (#{c}) [#{s}]", -- Makes PHPCS errors more readeable
 	sources = my_sources
 })
