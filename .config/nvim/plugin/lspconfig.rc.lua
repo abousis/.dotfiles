@@ -37,7 +37,7 @@ nvim_lsp.sumneko_lua.setup {
 }
 
 require('lspconfig')['intelephense'].setup {
-	on_attach = on_attach('intelephense', { timeout_ms = 5000 }),
+	on_attach = on_attach,
 }
 
 require('lspconfig')['pyright'].setup {
