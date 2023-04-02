@@ -13,6 +13,7 @@ ts.setup {
 	ensure_installed = {
 		"tsx",
 		"javascript",
+		"typescript",
 		"rust",
 		"python",
 		"php",
@@ -20,7 +21,9 @@ ts.setup {
 		"yaml",
 		"css",
 		"html",
-		"lua"
+		"lua",
+		"markdown",
+		"markdown_inline"
 	},
 	autotag = {
 		enable = true,

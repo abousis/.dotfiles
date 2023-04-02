@@ -1,9 +1,11 @@
 local null_ls = require("null-ls")
 
 local my_sources = {
-	null_ls.builtins.formatting.prettier.with({
+	null_ls.builtins.formatting.prettierd.with({
+		-- Prettier the quick version
 		filetypes = {
-			"javascript", "typescript", "css", "scss", "html", "json", "yaml", "markdown", "md", "txt"
+			"javascript", "javascriptreact", "typescript", "typescriptreact", "css", "scss", "html", "json", "yaml",
+			"markdown", "md", "txt"
 		},
 	}),
 	null_ls.builtins.diagnostics.phpcs.with({ -- Change how the php linting will work
