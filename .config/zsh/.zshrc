@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -15,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -77,7 +70,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# plugins=(git)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -90,6 +83,9 @@ autoload -Uz compinit && compinit
 setxkbmap -option caps:escape
 
 # export MANPATH="/usr/local/man:$MANPATH"
+#
+# Import to path Rust programs
+export PATH=$PATH:~/.cargo/bin
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -113,17 +109,6 @@ setxkbmap -option caps:escape
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="lsd"
-alias rg="~/Dev/Tools/ripgrep/target/release/rg"
-alias cat="~/.cargo/bin/bat"
+alias cat="bat"
 alias nv="nvim"
 alias nvf='nvim $(fzf)'
-alias pm="~/Dev/Tools/Postman/app/Postman"
-source ~/Projects/powerlevel10k/powerlevel10k.zsh-theme
-
-#fzf settings
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-alias luamake=/home/abousis/Projects/lua-language-server/3rd/luamake/luamake
