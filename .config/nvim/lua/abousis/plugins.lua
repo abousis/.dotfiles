@@ -26,6 +26,9 @@ Plug 'glepnir/lspsaga.nvim'                                    -- LSP saga
 Plug 'jose-elias-alvarez/null-ls.nvim'                         -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
 Plug 'lewis6991/gitsigns.nvim'                                 -- Git linting
 Plug 'tpope/vim-fugitive'                                      -- Git Fugitive
+Plug 'mfussenegger/nvim-dap'                                   -- Debugger
+Plug 'mxsdev/nvim-dap-vscode-js'                               -- Debugger for TypeScript/JavaScript
+Plug 'rcarriga/nvim-dap-ui'                                    -- UI for debugger
 
 vim.call('plug#end')
 

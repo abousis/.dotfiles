@@ -46,10 +46,24 @@ require('lspconfig')['tsserver'].setup {
 }
 
 --Rust
-require('lspconfig')['rust_analyzer'].setup {
+require('lspconfig')['rust_analyzer'].setup({
 	on_attach = on_attach,
-	-- Server-specific settings...
 	settings = {
-		["rust-analyzer"] = {}
-	}
-}
+		['rust-analyzer'] = {
+			cargo = {
+				allFeatures = true,
+			},
+			checkOnSave = {
+				allFeatures = true,
+				command = 'clippy',
+			},
+			procMacro = {
+				ignored = {
+					['async-trait'] = { 'async_trait' },
+					['napi-derive'] = { 'napi' },
+					['async-recursion'] = { 'async_recursion' },
+				},
+			},
+		},
+	},
+})
