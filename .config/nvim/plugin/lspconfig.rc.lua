@@ -45,6 +45,17 @@ require('lspconfig')['tsserver'].setup {
 	cmd = { "typescript-language-server", "--stdio" },
 }
 
+--Go
+require('lspconfig')['gopls'].setup {
+	on_attach = on_attach,
+}
+
+--C
+require('lspconfig')['clangd'].setup {
+	on_attach = on_attach,
+	filetypes = { "c" }
+}
+
 --Rust
 require('lspconfig')['rust_analyzer'].setup({
 	on_attach = on_attach,
