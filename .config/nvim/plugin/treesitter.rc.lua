@@ -15,6 +15,7 @@ ts.setup {
 		"javascript",
 		"typescript",
 		"rust",
+		"go",
 		"python",
 		"php",
 		"json",
