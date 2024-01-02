@@ -78,3 +78,13 @@ require('lspconfig')['rust_analyzer'].setup({
 		},
 	},
 })
+
+--Tailwind
+require('lspconfig')['tailwindcss'].setup {
+	on_attach = on_attach,
+}
+
+--HTML
+require('lspconfig')['html'].setup {
+	on_attach = on_attach,
+}
